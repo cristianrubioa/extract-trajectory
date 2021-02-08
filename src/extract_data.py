@@ -10,6 +10,7 @@ class Extract:
         self.trajectory_file = None
 
     def odom_callback(self, data):
+        """Extracts the values ​​of type nav_msgs/Odometry."""
         timeStampNum = data.header.stamp.secs + \
             (data.header.stamp.nsecs * 10**(-9))
         timeStamp = str(timeStampNum)
@@ -27,19 +28,23 @@ class Extract:
             tz) + " " + str(qx) + " " + str(qy) + " " + str(qz) + " " + str(qw) + "\n"
 
         self.trajectory_file.write(values)
-        print("[DATA] ({})".format(values))
+        print("[DATA] [{}]".format(values))
 
     def write_file(self, file):
+        """Write the output file structure."""
         self.trajectory_file = open(file, 'w')
 
         rospy.init_node('extract_data_odometry')
-        print(">>> Waiting to extract data ...")
         rospy.Subscriber('/integrated_to_init', Odometry, self.odom_callback)
+        print(">>> Waiting to extract data ...")
         rospy.spin()
 
         self.trajectory_file.close()
 
 
 if __name__ == '__main__':
-    e = Extract()
-    e.write_file('trajectory.txt')
+    try:
+        e = Extract()
+        e.write_file('trajectory.txt')
+    except rospy.ROSInterruptException:
+        pass
