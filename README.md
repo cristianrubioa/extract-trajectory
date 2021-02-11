@@ -19,7 +19,7 @@ rosbag info <file.bag>
 
 ...
 types:  nav_msgs/Odometry
-topics: /aft_mapped_to_init     
+topics: /integrated_to_init    
 ...
 ```
 
@@ -57,7 +57,9 @@ python plot_data.py trajectory.txt
 ```
 
 With evo kit: [MichaelGrupp/evo](https://github.com/MichaelGrupp/evo)
-
+```
+evo_traj tum trajectory.txt -p --plot_mode=xz
+```
 
 
 
