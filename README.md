@@ -19,7 +19,7 @@ rosbag info <file.bag>
 
 ...
 types:  nav_msgs/Odometry
-topics: /aft_mapped_to_init
+topics: /aft_mapped_to_init     
 ...
 ```
 
@@ -42,8 +42,22 @@ More info: https://vision.in.tum.de/data/datasets/rgbd-dataset/file_formats
 
 ## Run the package
 
+- Rename the topic [/integrated_to_init](https://github.com/cristianrubioa/extract_trajectory/blame/main/src/extract_data.py#L38) and rename the file [trajectory.txt](https://github.com/cristianrubioa/extract_trajectory/blame/main/src/extract_data.py#L48)
 
+- Extract trajectory:
 ```
-python code.py
+python extract_data.py
 ```
+
+## Trajectory Evaluation
+
+- Plot trajectory: ```python plot_data.py <file.txt>```
+```
+python plot_data.py trajectory.txt
+```
+
+With evo kit: [MichaelGrupp/evo](https://github.com/MichaelGrupp/evo)
+
+
+
 
