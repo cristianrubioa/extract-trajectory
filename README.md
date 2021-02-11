@@ -53,15 +53,19 @@ More info: https://vision.in.tum.de/data/datasets/rgbd-dataset/file_formats
 
 ## Run the package
 
-- Rename the topic [/integrated_to_init](https://github.com/cristianrubioa/extract_trajectory/blame/main/src/extract_data.py#L38) and rename the file [trajectory.txt](https://github.com/cristianrubioa/extract_trajectory/blame/main/src/extract_data.py#L48)
+- Rename the topic ['/integrated_to_init'](https://github.com/cristianrubioa/extract_trajectory/blame/main/src/extract_data.py#L38) and rename the file ['trajectory.txt'](https://github.com/cristianrubioa/extract_trajectory/blame/main/src/extract_data.py#L48)
 
 - Extract trajectory with:
 ```
 python extract_data.py
 ```
 
+- Play existing bag files:
+```
+rosbag play <file.bag>
+```
 
-## Plot Trajectory
+## Plot trajectory
 
 **Note:** trajectory.txt is a sample file generated from extract_data.py
 
@@ -75,7 +79,7 @@ With evo kit: [MichaelGrupp/evo](https://github.com/MichaelGrupp/evo)
 ```
 evo_traj tum trajectory.txt -p --plot_mode=xz
 ```
-<img src = "https://raw.githubusercontent.com/cristianrubioa/extract_trajectory/main/img/evo.png" width = "300"><img src = "https://raw.githubusercontent.com/cristianrubioa/extract_trajectory/main/img/evo_1.png" width = "300"><img src = "https://raw.githubusercontent.com/cristianrubioa/extract_trajectory/main/img/evo_2.png" width = "300">
+<img src = "https://raw.githubusercontent.com/cristianrubioa/extract_trajectory/main/img/evo.png" width = "230"><img src = "https://raw.githubusercontent.com/cristianrubioa/extract_trajectory/main/img/evo_1.png" width = "230"><img src = "https://raw.githubusercontent.com/cristianrubioa/extract_trajectory/main/img/evo_2.png" width = "230">
 
 
 
