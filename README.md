@@ -73,7 +73,7 @@ rosbag play <file.bag>
 ```
 python plot_data.py trajectory.txt
 ```
-<img src = "https://raw.githubusercontent.com/cristianrubioa/extract_trajectory/main/img/plot_data.png" width = "300">
+<img src = "https://raw.githubusercontent.com/cristianrubioa/extract_trajectory/main/img/plot_data.png" width = "300"><img src = "https://raw.githubusercontent.com/cristianrubioa/extract_trajectory/main/img/plot_data.gif" width = "300" height="280">
 
 With evo kit: [MichaelGrupp/evo](https://github.com/MichaelGrupp/evo)
 ```
